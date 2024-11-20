@@ -1,5 +1,5 @@
 # FastSpeech-FloWaveNet
-This repository is adapted from [FastSpeech-Pytorch](https://github.com/xcmyz/FastSpeech) from `xcmyz`, [FloWaveNet](https://github.com/ksw0306/FloWaveNet) from `kws0306`, and [https://github.com/cjlin8787/FastSpeech-FloWaveNet] from 'cjlin8787'. Instead of using WaveGlow, FastSpeech from this repository use FloWaveNet as the vocoder. Many thanks to the original authors. Please check their repositories for more detailed description.
+This repository is adapted from [FastSpeech-Pytorch](https://github.com/xcmyz/FastSpeech) from `xcmyz`, [FloWaveNet](https://github.com/ksw0306/FloWaveNet) from `kws0306`, and [FastSpeech-FloWaveNet](https://github.com/cjlin8787/FastSpeech-FloWaveNet) from `cjlin8787`. Instead of using WaveGlow, FastSpeech from this repository use FloWaveNet as the vocoder. Many thanks to the original authors. Please check their repositories for more detailed description.
 
 ## Prepare Pretrained Model
 1. Download pretrained model of flowavenet from [here](https://drive.google.com/drive/folders/1AqdZaqAFRcBns4UDveLj3s4o4jOwIos8?usp=drive_link), and put it under `flowavenet/pretrained_model`.
