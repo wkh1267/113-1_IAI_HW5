@@ -9,7 +9,6 @@ Recent advances in generative artificial intelligence (AI) have created many pos
 ```
 git clone https://github.com/wkh1267/113-1_IAI_HW5.git
 ```
-2. Extract [train_dataset.zip](or download it on https://drive.google.com/file/d/1GztoCT0Hjmt-Yqw-6rfiwu2QYkRI1uI5/view?usp=drive_link).
 
 The directory should look like the following:
 ```
@@ -25,7 +24,7 @@ model.py
 README.md
 requirements.txt
 ```
-3. The `meta` contains the path to each `wav` file (column 1), and the corresponding label (column 2). If the audio is a real recording, the label will be `0`. If the audio is generated from AI, the label will be `1`.
+2. The `meta` contains the path to each `wav` file (column 1), and the corresponding label (column 2). If the audio is a real recording, the label will be `0`. If the audio is generated from AI, the label will be `1`.
 
 ## Setup Environment
 Please check the [Pytorch](https://pytorch.org/) website if CUDA version needs to be downloaded.
@@ -71,15 +70,21 @@ train_dataset
  `def predict()`, and `def evaluate()`. Please do not change the API (parameters and return values) of these function.
 * When evaluating the homework, only the following instructions will be used:
 ```
-test_dataset = HW5Dataset('test_dataset/meta.csv')
-test_loader = # Create from test_dataset
+test_dataset = HW5Dataset('../test_dataset/meta.csv')
+test_loader = DataLoader(val_dataset, batch_size=16, shuffle=False, collate_fn=collate_batch)
 
 model = HW5Model(hidden_size=hidden_size, num_layers=num_layers)
-model.load_state_dict(torch.load("./best_model.ckpt"))
+
+# If you directly clone the github repo
+model.load_state_dict(torch.load("best_model.ckpt"))
+# # If you use colab and submit the .ipynb
+# model.load_state_dict(torch.load("/content/best_model.ckpt"))
 
 y_pred_prob = model.predict_prob(test_loader)
 y_pred = model.predict(test_loader)
 y_true = torch.concat([labels for mel, labels in val_loader]).numpy().astype('float32')
 print(f'Accuracy on test set: {(y_pred == y_true).sum() / len(y_true):.2f}')
 print(f'Area under precision recall curve on test set: {model.evaluate(y_true, y_pred_prob):.2f}')
+f1 = f1_score(y_true, y_pred, average='binary')  # Adjust 'average' for multi-class if needed
+print(f'F1 Score on test set: {f1:.2f}')
 ```
