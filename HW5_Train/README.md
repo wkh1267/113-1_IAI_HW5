@@ -5,8 +5,13 @@ This repository is the template for the homework 5 of 人工智慧概論/Introdu
 Recent advances in generative artificial intelligence (AI) have created many possibilities, but this new technology also poses many challenges to society. Currently, generative AI can generate highly realistic audio data. In this project, you will design a supervised learning prediction model to verify whether the given audio data is from a real recording or the result of AI generation.
 
 ## Prepare Training Data
-1. Download and extract [train_dataset.zip](https://drive.google.com/file/d/1GztoCT0Hjmt-Yqw-6rfiwu2QYkRI1uI5/view?usp=drive_link).
-2. Unzip `sample.zip`. The directory should look like the following:
+1. Git clone this repository.
+```
+git clone https://github.com/wkh1267/113-1_IAI_HW5.git
+```
+2. Extract [train_dataset.zip](or download it on https://drive.google.com/file/d/1GztoCT0Hjmt-Yqw-6rfiwu2QYkRI1uI5/view?usp=drive_link).
+
+The directory should look like the following:
 ```
 train_dataset
 ├── meta.csv
