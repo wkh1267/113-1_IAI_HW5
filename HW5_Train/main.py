@@ -84,6 +84,6 @@ y_pred = model.predict(test_loader)
 y_true = torch.concat([labels for mel, labels in val_loader]).numpy().astype('float32')
 print(f'Accuracy on test set: {(y_pred == y_true).sum() / len(y_true):.2f}')
 print(f'Area under precision recall curve on test set: {model.evaluate(y_true, y_pred_prob):.2f}')
-f1 = f1_score(y_true, y_pred, average='binary')  # Adjust 'average' for multi-class if needed
+f1 = f1_score(y_true, y_pred, average='binary')
 print(f'F1 Score on test set: {f1:.2f}')
 '''
