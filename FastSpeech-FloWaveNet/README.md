@@ -6,6 +6,9 @@ This repository is adapted from [FastSpeech-Pytorch](https://github.com/xcmyz/Fa
 2. Download pretrained model of fastspeech from [here](https://drive.google.com/file/d/1vMrKtbjPj9u_o3Y-8prE6hHCc6Yj4Nqk/view?usp=sharing), and put it under `new_model`.
 
 ## Setup Environment
+Using [colab](https://colab.research.google.com/drive/1wSFNqDYhSQ98oIo4viGenG3G1nVK24d3?usp=sharing)
+
+On local:
 Please check the [Pytorch](https://pytorch.org) website if CUDA version needs to be downloaded.
 ```
 conda create -n fastspeech python=3.8 --yes
@@ -14,7 +17,11 @@ conda activate fastspeech
 conda install conda-forge::mamba --yes
 mamba install --file requirements.txt -c pytorch -c defaults -c anaconda -c conda-forge --yes
 ```
-Or consider using [colab](https://colab.research.google.com/drive/1wSFNqDYhSQ98oIo4viGenG3G1nVK24d3?usp=sharing)
+If you encounter errors, try install the packages seperately by using:
+```
+mamba install "package_name<version"
+```
+Or create a new env with python=3.9 and try again.
 
 ## Synthesize
 The result will be written into `results/${step}_${flowavenets_step}`. Please change `flowavenet_step` according to the file downloaded from [Prepare FloWaveNet Model](#prepare-flowavenet-model) to synthesize audio in different quality.

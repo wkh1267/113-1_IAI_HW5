@@ -27,7 +27,10 @@ requirements.txt
 2. The `meta` contains the path to each `wav` file (column 1), and the corresponding label (column 2). If the audio is a real recording, the label will be `0`. If the audio is generated from AI, the label will be `1`.
 
 ## Setup Environment
-Please check the [Pytorch](https://pytorch.org/) website if CUDA version needs to be downloaded.
+Using [colab](https://colab.research.google.com/drive/1UOpV8u_dBYbgnhJ-3qKZjd7JNcF-eczi?usp=sharing)
+
+On local:
+Please check the [Pytorch](https://pytorch.org) website if CUDA version needs to be downloaded.
 ```
 conda create -n fastspeech python=3.8 --yes
 conda config --add channels conda-forge
@@ -35,6 +38,11 @@ conda activate fastspeech
 conda install conda-forge::mamba --yes
 mamba install --file requirements.txt -c pytorch -c defaults -c anaconda -c conda-forge --yes
 ```
+If you encounter errors, try install the packages seperately by using:
+```
+mamba install "package_name<version"
+```
+Or create a new env with python=3.9 and try again.
 
 ## Todo
 * Design the prediction model to distinguish if the provided recoding is real recording or is generated from AI.
