@@ -221,7 +221,7 @@ class HW5Model(nn.Module):
         float:
             the area under precision recall curve.
         """
-        # TODO (10P): return value should be the AUROC given y_true and y_prob, and you need to plot the ROC curve.
+        # TODO (10P): return value should be the AUROC given y_true and y_prob, and you need to plot the ROC curve and store as a .png file
         # CHECK: https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html
         # CHECK: https://scikit-learn.org/stable/modules/generated/sklearn.metrics.auc.html
 
